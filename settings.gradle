@@ -19,5 +19,6 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Strongbox"
-include ':app'
+
+include ':app',
+        ':maker'
