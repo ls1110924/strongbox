@@ -18,8 +18,10 @@ public class PngModel implements ImgModel {
 
     @NotNull
     private final byte[] fileHeader = new byte[8];
+    private PngChunk headerChunk = null;
     @NotNull
     private final List<PngChunk> chunks = new ArrayList<>();
+    private PngChunk endChunk = null;
 
     public PngModel() {
     }
@@ -35,6 +37,14 @@ public class PngModel implements ImgModel {
         } else {
             throw new IllegalArgumentException("the fileHeader parameter is illegal");
         }
+    }
+
+    public PngChunk getHeaderChunk() {
+        return headerChunk;
+    }
+
+    public void setHeaderChunk(PngChunk headerChunk) {
+        this.headerChunk = headerChunk;
     }
 
     @NotNull
@@ -53,4 +63,11 @@ public class PngModel implements ImgModel {
         }
     }
 
+    public PngChunk getEndChunk() {
+        return endChunk;
+    }
+
+    public void setEndChunk(PngChunk endChunk) {
+        this.endChunk = endChunk;
+    }
 }

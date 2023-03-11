@@ -5,6 +5,7 @@ import com.yunxian.strongbox.maker.model.PngChunk;
 import com.yunxian.strongbox.maker.model.PngModel;
 import com.yunxian.strongbox.maker.util.ArrayUtils;
 import com.yunxian.strongbox.maker.util.Constants;
+import com.yunxian.strongbox.maker.util.NumberUtils;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -48,7 +49,7 @@ public class PngParser implements IParser<PngModel> {
                 if (readLen != 4) {
                     throw new IllegalArgumentException("the file isn't a illegal file");
                 }
-                long chunkLen = ArrayUtils.convertLong(chunk.getLength());
+                long chunkLen = NumberUtils.convertLong(chunk.getLength());
                 ByteArrayOutputStream dataOutput = new ByteArrayOutputStream();
                 for (int i = 0; i < chunkLen; i++) {
                     int c = input.read();
@@ -63,14 +64,19 @@ public class PngParser implements IParser<PngModel> {
                 if (readLen != 4) {
                     throw new IllegalArgumentException("the file isn't a illegal file");
                 }
-                pngModel.appendChunk(chunk);
 
-                if (PngChunkType.END.type.equals(new String(chunk.getType(), StandardCharsets.US_ASCII))) {
+                String type = new String(chunk.getType(), StandardCharsets.US_ASCII);
+                if (PngChunkType.HEADER.type.equals(type)) {
+                    pngModel.setHeaderChunk(chunk);
+                } else if (PngChunkType.END.type.equals(type)) {
+                    pngModel.setEndChunk(chunk);
                     // 正常结束
                     if (input.read() != -1) {
                         throw new IllegalArgumentException("the file isn't a illegal file");
                     }
                     break;
+                } else {
+                    pngModel.appendChunk(chunk);
                 }
             }
 

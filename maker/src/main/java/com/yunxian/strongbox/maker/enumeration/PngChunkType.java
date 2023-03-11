@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
  */
 public enum PngChunkType {
 
-    FILE_HEADER("IHDR", true),
+    HEADER("IHDR", true),
     CARDINAL_BLOCK("cHRM"),
     GAMA("gAMA"),
     SAMPLE_BIT("sBIT"),

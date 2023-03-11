@@ -1,6 +1,5 @@
 package com.yunxian.strongbox.maker.util;
 
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -38,16 +37,6 @@ public class ArrayUtils {
             }
             return true;
         }
-    }
-
-    public static long convertLong(@NotNull byte[] arr) {
-        long result = 0;
-        result |= arr[0];
-        for (int i = 1; i < arr.length; i++) {
-            result <<= 8;
-            result |= (arr[i] & 0xff);
-        }
-        return result;
     }
 
 }

@@ -9,4 +9,5 @@ java {
 
 dependencies {
     implementation "org.jetbrains:annotations:$org_annotation"
+    implementation "com.alibaba:fastjson:$fastjson"
 }

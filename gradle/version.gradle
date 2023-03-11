@@ -2,4 +2,5 @@
 
 ext {
     org_annotation = '13.0'
+    fastjson = '2.0.23'
 }
