@@ -1,4 +1,4 @@
-package com.yunxian.strongbox;
+package com.yunxian.strongbox.app;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.yunxian.strongbox.databinding.FragmentFirstBinding;
+import com.yunxian.strongbox.app.databinding.FragmentFirstBinding;
 
 public class FirstFragment extends Fragment {
 

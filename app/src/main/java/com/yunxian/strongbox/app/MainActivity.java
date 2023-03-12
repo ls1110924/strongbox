@@ -1,4 +1,4 @@
-package com.yunxian.strongbox;
+package com.yunxian.strongbox.app;
 
 import android.os.Bundle;
 
@@ -13,7 +13,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.yunxian.strongbox.databinding.ActivityMainBinding;
+import com.yunxian.strongbox.app.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
