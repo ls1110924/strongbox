@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace 'com.yunxian.strongbox.app'
-    compileSdk 32
+    compileSdk project.ext.compileSdk
 
     defaultConfig {
         applicationId "com.yunxian.strongbox.app"
-        minSdk 19
-        targetSdk 32
+        minSdk project.ext.minSdk
+        targetSdk project.ext.targetSdk
         versionCode 1
         versionName "1.0.0"
     }
@@ -30,9 +30,9 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'com.google.android.material:material:1.5.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
-    implementation 'androidx.navigation:navigation-fragment:2.4.1'
-    implementation 'androidx.navigation:navigation-ui:2.4.1'
+    implementation "androidx.appcompat:appcompat:$appcompat"
+    implementation "com.google.android.material:material:$material"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout"
+    implementation "androidx.navigation:navigation-fragment:$navigation"
+    implementation "androidx.navigation:navigation-ui:$navigation"
 }
