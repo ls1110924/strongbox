@@ -1,6 +1,7 @@
 package com.yunxian.strongbox.maker.util;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.regex.Pattern;
 
@@ -23,6 +24,16 @@ public class StringUtils {
      */
     public static boolean isPrintAscii(@NotNull String str) {
         return PATTERN.matcher(str).matches();
+    }
+
+    /**
+     * 判断字符串是否为空
+     *
+     * @param str 待检查的字符串
+     * @return true表示字符串为空，即为null或长度为0，否则返回false
+     */
+    public static boolean isEmpty(@Nullable String str) {
+        return str == null || str.length() == 0;
     }
 
 }

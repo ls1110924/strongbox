@@ -1,6 +1,7 @@
 package com.yunxian.strongbox.maker.logic.builder;
 
 import com.yunxian.strongbox.maker.model.ImgModel;
+import com.yunxian.strongbox.maker.model.SecretKeyModel;
 import com.yunxian.strongbox.maker.util.StringUtils;
 
 import org.jetbrains.annotations.NotNull;
@@ -25,6 +26,6 @@ public interface IBuilder<T extends ImgModel> {
         return true;
     }
 
-    boolean build(@NotNull String dest, @NotNull T model, @NotNull Map<String, String> params);
+    boolean build(@NotNull String dest, @NotNull T model, @NotNull SecretKeyModel keyModel);
 
 }
